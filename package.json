@@ -1,0 +1,47 @@
+{
+  "name": "gradient-figlet",
+  "version": "1.0.0",
+  "description": "Creates gradient ASCII art from text with FIGlet and style",
+  "private": true,
+  "bin": {
+    "gradient-figlet": "bin/gradient-figlet"
+  },
+  "scripts": {
+    "format": "prettier --write **/*.{js,json} && standard --fix",
+    "lint": "standard",
+    "test": "jest",
+    "watch": "jest --watch",
+    "snapupdate": "jest --updateSnapshot",
+    "coverage": "jest --coverage"
+  },
+  "files": [
+    "src",
+    "LICENSE",
+    "readme.md",
+    "docs",
+    "bin"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "figlet": "^1.5.2",
+    "gluegun": "latest",
+    "gradient-string": "^2.0.0"
+  },
+  "devDependencies": {
+    "jest": "^24.1.0",
+    "prettier": "^1.12.1",
+    "standard": "^12.0.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  }
+}

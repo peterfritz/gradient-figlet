@@ -9,6 +9,7 @@ const command = {
 
     const {
       options: {
+        'list-themes': listThemes,
         from,
         to,
         l,
@@ -18,15 +19,41 @@ const command = {
       first
     } = parameters
 
-    function parseColor (c) {
-      if (RegExp('[0-9a-fA-F]{6}').test(c)) {
-        return '#' + c
-      } else {
-        return c
-      }
-    }
-
     const text = first || 'gradient-figlet'
+
+    if (listThemes) {
+      console.log(`atlas       ${gradient.atlas('████████████████████████████████████████')}`)
+      console.log(`cristal     ${gradient.cristal('████████████████████████████████████████')}`)
+      console.log(`fruit       ${gradient.fruit('████████████████████████████████████████')}`)
+      console.log(`instagram   ${gradient.instagram('████████████████████████████████████████')}`)
+      console.log(`mind        ${gradient.mind('████████████████████████████████████████')}`)
+      console.log(`morning     ${gradient.morning('████████████████████████████████████████')}`)
+      console.log(`passion     ${gradient.passion('████████████████████████████████████████')}`)
+      console.log(`pastel      ${gradient.pastel('████████████████████████████████████████')}`)
+      console.log(`rainbow     ${gradient.rainbow('████████████████████████████████████████')}`)
+      console.log(`retro       ${gradient.retro('████████████████████████████████████████')}`)
+      console.log(`summer      ${gradient.summer('████████████████████████████████████████')}`)
+      console.log(`teen        ${gradient.teen('████████████████████████████████████████')}`)
+      console.log(`vice        ${gradient.vice('████████████████████████████████████████')}`)
+      return
+    } else if (t === true) {
+      print.warning(`Usage: gradient-figlet ${text} -${l ? 'l' : ''}${m ? 'm' : ''}t theme\n`)
+
+      console.log(`Themes: ${gradient.atlas('atlas')}`)
+      console.log(`        ${gradient.cristal('cristal')}`)
+      console.log(`        ${gradient.fruit('fruit')}`)
+      console.log(`        ${gradient.instagram('instagram')}`)
+      console.log(`        ${gradient.mind('mind')}`)
+      console.log(`        ${gradient.morning('morning')}`)
+      console.log(`        ${gradient.passion('passion')}`)
+      console.log(`        ${gradient.pastel('pastel')}`)
+      console.log(`        ${gradient.rainbow('rainbow')}`)
+      console.log(`        ${gradient.retro('retro')}`)
+      console.log(`        ${gradient.summer('summer')}`)
+      console.log(`        ${gradient.teen('teen')}`)
+      console.log(`        ${gradient.vice('vice')}`)
+      return
+    }
 
     figlet(text, function (err, data) {
       if (err) {
@@ -43,25 +70,6 @@ const command = {
         print.warning(`Usage: gradient-figlet ${text} --from color --to color`)
         return
       } else if (t) {
-        if (t === true) {
-          print.warning(`Usage: gradient-figlet ${text} -${l ? 'l' : ''}${m ? 'm' : ''}t theme\n`)
-
-          console.log(`Themes: ${gradient.atlas('atlas')}`)
-          console.log(`        ${gradient.cristal('cristal')}`)
-          console.log(`        ${gradient.fruit('fruit')}`)
-          console.log(`        ${gradient.instagram('instagram')}`)
-          console.log(`        ${gradient.mind('mind')}`)
-          console.log(`        ${gradient.morning('morning')}`)
-          console.log(`        ${gradient.passion('passion')}`)
-          console.log(`        ${gradient.pastel('pastel')}`)
-          console.log(`        ${gradient.rainbow('rainbow')}`)
-          console.log(`        ${gradient.retro('retro')}`)
-          console.log(`        ${gradient.summer('summer')}`)
-          console.log(`        ${gradient.teen('teen')}`)
-          console.log(`        ${gradient.vice('vice')}`)
-          return
-        }
-
         switch (t) {
           case 'atlas':
             gf = gradient.atlas
@@ -121,3 +129,11 @@ const command = {
 }
 
 module.exports = command
+
+function parseColor (c) {
+  if (c.length === 6 && RegExp('[0-9a-fA-F]{6}').test(c)) {
+    return '#' + c.toLowerCase()
+  } else {
+    return c.toLowerCase()
+  }
+}

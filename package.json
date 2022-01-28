@@ -1,8 +1,14 @@
 {
   "name": "gradient-figlet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Creates gradient ASCII art from text with FIGlet and style",
-  "private": true,
+  "private": false,
+  "repository": "peterfritz/gradient-figlet",
+  "author": {
+    "name": "Peter Fritz",
+    "email": "me@peterfritz.dev",
+    "url": "https://github.com/peterfritz/gradient-figlet"
+  },
   "bin": {
     "gradient-figlet": "bin/gradient-figlet"
   },

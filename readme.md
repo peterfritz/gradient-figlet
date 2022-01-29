@@ -5,13 +5,13 @@
 
 <div align="center">
   <a href="https://www.npmjs.com/package/gradient-figlet">
-    <img src="https://img.shields.io/npm/v/gradient-figlet?style=flat-square" alt="" />
+    <img src="https://img.shields.io/npm/v/gradient-figlet?style=flat-square" alt="npm version" />
   </a>
   <a href="#">
-    <img src="https://img.shields.io/npm/dt/gradient-figlet?style=flat-square" alt="" />
+    <img src="https://img.shields.io/npm/dt/gradient-figlet?style=flat-square" alt="npm downloads" />
   </a>
   <a href="LICENSE">
-    <img src="https://img.shields.io/github/license/peterfritz/gradient-figlet?style=flat-square" alt="" />
+    <img src="https://img.shields.io/github/license/peterfritz/gradient-figlet?style=flat-square" alt="license" />
   </a>
 </div>
 
@@ -32,7 +32,7 @@ You can use npx to install and run the package
 
 ## Options
 
-| option         | description                                       | Default value | Required | [Examples](#examples)    |
+| option         | description                                       | default value | required | [examples](#examples)    |
 | -------------- | ------------------------------------------------- | ------------- | -------- | ------------------------ |
 | -l             | adds a trailing newline to fix vertical alignment | false         | false    | [-l](#l)                 |
 | -m             | makes the gradient horizontal                     | false         | false    | [-lm](#lm)               |
@@ -42,7 +42,7 @@ You can use npx to install and run the package
 
 ### Themes
 
-One of [gradient-string's built in gradients](https://github.com/bokub/gradient-string#available-built-in-gradients) listed below.
+One of [gradient-string's built-in gradients](https://github.com/bokub/gradient-string#available-built-in-gradients) listed below.
 
 <h4 id="list-themes"><code>npx gradient-figlet --list-themes</code></h4>
 <a href="#">
